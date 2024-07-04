@@ -162,5 +162,8 @@ cython_debug/
 #.idea/
 
 data/db/*
+!data/db/.gitignore
+data/static/*
+!data/static/.gitignore
 
 .env
