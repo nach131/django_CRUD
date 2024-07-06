@@ -5,9 +5,17 @@ para saber los error de syntax en el codido
  docker compose run --rm app sh -c "flake8"
 
  Para testear Django
+====================
+
+rm -rf data/db
+
+mkdir data/db
+
+ docker compose run --rm app sh -c "python manage.py wait_for_db"
 
  docker compose run --rm app sh -c "python manage.py test"
 
+====================
 lanzar docker para crear el proyeto, docker se para y se borra
 
 crea el proyecto
@@ -23,6 +31,8 @@ docker compose run --rm app sh -c "python manage.py createsuperuser"
 docker compose run --rm app sh -c "python manage.py makemigrations"
 
 docker compose run --rm app sh -c "python manage.py migrate"
+
+====================
 
 ====================
 
