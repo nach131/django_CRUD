@@ -32,7 +32,10 @@ clean:
 	@echo "Cleaning up data directories..."
 	@rm -rf $(DATA_DIRS)
 
-fclean: down
+fclean: down clean
 	@echo "Delete All..."
+	@docker image prune -af
+	@docker volume rm src-crud_db-data
+	@docker volume rm src-crud_static-data
 
 .PHONY: all create-dirs build up clean down fclean
